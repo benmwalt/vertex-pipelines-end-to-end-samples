@@ -27,8 +27,8 @@ terraform {
 
   # Terraform state stored in GCS
   backend "gcs" {
-    bucket = "my-tfstate-bucket" # Change this
-    prefix = "/path/to/tfstate"  # Change this
+    bucket = "kampong-tfstate" # Change this
+    prefix = "/test"           # Change this
   }
 }
 

@@ -169,3 +169,9 @@ terraform/*.zip
 
 # env.sh (only example file should be committed)
 env.sh
+
+# Analysis results
+*.html
+
+# VS Code settings
+settings.json
