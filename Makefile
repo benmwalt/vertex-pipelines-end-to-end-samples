@@ -37,4 +37,5 @@ run: ## Compile pipeline, copy assets to GCS, and run pipeline in sandbox enviro
 
 e2e-tests: ## Compile pipeline, trigger pipeline and perform end-to-end (E2E) pipeline tests. Must specify pipeline=<training|prediction>
 	@ $(MAKE) compile && \
+	gsutil -m rsync -r -d ./pipelines/${PIPELINE_TEMPLATE}/$(pipeline)/assets ${PIPELINE_FILES_GCS_PATH}/$(pipeline)/assets && \
 	pipenv run python -m pytest tests/${PIPELINE_TEMPLATE}/$(pipeline)
